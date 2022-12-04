@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'show'])->name('product');
+Route::get('/', [ProductController::class, 'index'])->name('product');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/cart', [App\Http\Controllers\cartController::class, 'index'])->name('cart');
 
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('productShow');
