@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.default')
 @section('styles')
  <style>
      body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Noto Sans', sans-serif; letter-spacing: 0px; font-size: 14px; color: #2e3139; font-weight: 400; line-height: 26px; }

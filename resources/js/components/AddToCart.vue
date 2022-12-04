@@ -24,7 +24,7 @@
                 // Checking if user logged in.
 
                 if(this.userId == 0){
-                    this.$toastr.e('Você precisa fazer o login, para adicionar este produto no carrinho');
+                    this.$toastr.e('Você precisa fazer o login, para adicionar este produto no carrinho.');
                     return;
                 }
 

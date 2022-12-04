@@ -40,46 +40,36 @@ class CartsController extends Controller
     {
         if(!$request->get('product_id')){
             return [
-                'message'=>'Cart items returned',
-                'items' => Cart::where('user_id', auth()->user()->id)->sum('quantity'), 
+                'message'   =>'Itens do carrinho devolvido(s).',
+                'items'     => Cart::where('user_id', auth()->user()->id)->sum('quantity'), 
             ];
         }
 
-
         // Getting product details.
-
         $product = Product::where('id', $request->get('product_id'))->first();
-
-        $productFoundInCart = Cart::where('product_id', 
-        $request->get('product_id'))->pluck('id');
-
-        
+        $productFoundInCart = Cart::where('product_id', $request->get('product_id'))->pluck('id');
 
         if($productFoundInCart->isEmpty())
         {
             // Adding Product in cart.
-
             $cart  = Cart::create([
                 'product_id' => $product->id,
                 'quantity' => 1,
-                'price' => $product->sale_price,
+                'price' => $product->price,
                 'user_id' => auth()->user()->id,
             ]);
         }
         else
         {
             // Incrementing Product Quantity.
-
-            $cart = Cart::where('product_id', $request->get('product_id'))
-            ->increment('quantity');
+            $cart = Cart::where('product_id', $request->get('product_id'))->increment('quantity');
         }
 
          // Check user cart items.
-
-        if($cart)
+        if($cart) 
         {
             return [
-                'message'=>'Cart Updated',
+                'message'=>'Carrinho atualizado',
                 'items' => Cart::where('user_id', auth()->user()->id)->sum('quantity'), 
             ];
         }
@@ -152,7 +142,7 @@ class CartsController extends Controller
                             $finalData[$cartItem->product_id]['id'] = $cartProduct->id;
                             $finalData[$cartItem->product_id]['name'] = $cartProduct->name;
                             $finalData[$cartItem->product_id]['quantity'] = $cartItem->quantity;
-                            $finalData[$cartItem->product_id]['sale_price'] = $cartItem->price;
+                            $finalData[$cartItem->product_id]['price'] = $cartItem->price;
                             $finalData[$cartItem->product_id]['total'] = $cartItem->price * $cartItem->quantity;
                             $amount += $cartItem->price * $cartItem->quantity;
                             $finalData['totalAmount'] = $amount;

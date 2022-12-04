@@ -5,10 +5,10 @@
 @section('content')
     <section>
         <div class="container px-5 mx-auto">
-            <form method="get" action="/" class="flex items-center space-x-5">
+            <form method="get" action="/" class="flex items-center space-x-3">
                 <div>
                     <input type="text" id="search" name="search" value="{{ request()->search }}"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
                 <div class="flex items-center space-x-2">
                     <button type="submit"

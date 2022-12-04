@@ -66,14 +66,14 @@
                     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                         <a href="/" class="mr-5 hover:text-gray-900">Home</a>
                     </nav>
-                    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                        <a href="/"class="mr-5 hover:text-gray-900">Pedidos</a>
+                    {{-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                        <a href="/"class="mr-5 hover:text-gray-900">Pedidos</a> --}}
                         {{-- <a href="{{ route('admin.products') }}"class="mr-5 hover:text-gray-900">Pedidos</a> --}}
-                    </nav>
-                    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                        <a href="/"class="mr-5 hover:text-gray-900">Clientes</a>
+                    {{-- </nav> --}}
+                    {{-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                        <a href="/"class="mr-5 hover:text-gray-900">Clientes</a> --}}
                         {{-- <a href="{{ route('client.clients') }}"class="mr-5 hover:text-gray-900">Clientes</a> --}}
-                    </nav>
+                    {{-- </nav> --}}
                     <a href="/" {{-- <a href="{{ route('admin.products') }}" --}}
                         class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0">Admin
                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -84,10 +84,8 @@
                     @if (Route::has('login'))
                         <div class="flex items-center">
                             @auth
-                            {{-- <cart /> --}}
-                                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                                    <a href="{{ url('/home') }}" class="mr-5 hover:text-gray-900">Home/Cart</a>
-                                </nav>
+                            <cart />
+                               
                             @else
                                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                                     <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">Log in</a>
