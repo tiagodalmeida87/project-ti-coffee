@@ -6123,26 +6123,6 @@ var render = function render() {
     }
   }, [_vm._v("Ano")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "2015"
-    }
-  }, [_vm._v("2015")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "2016"
-    }
-  }, [_vm._v("2016")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "2017"
-    }
-  }, [_vm._v("2017")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "2018"
-    }
-  }, [_vm._v("2018")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "2019"
-    }
-  }, [_vm._v("2019")]), _vm._v(" "), _c("option", {
-    attrs: {
       value: "2020"
     }
   }, [_vm._v("2020")]), _vm._v(" "), _c("option", {
@@ -6165,7 +6145,15 @@ var render = function render() {
     attrs: {
       value: "2025"
     }
-  }, [_vm._v("2025")])])])]), _vm._v(" "), _vm._m(12), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }, [_vm._v("2025")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2026"
+    }
+  }, [_vm._v("2026")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2027"
+    }
+  }, [_vm._v("2027")])])])]), _vm._v(" "), _vm._m(12), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("div", {
     staticClass: "col-md-6 col-sm-6 col-xs-12"
@@ -6200,7 +6188,7 @@ var render = function render() {
       staticClass: "summary-price"
     }, [_c("p", {
       staticClass: "summary-text"
-    }, [_vm._v("\n                                    $ " + _vm._s(summaryItem.total) + "\n                                ")]), _vm._v(" "), _c("span", {
+    }, [_vm._v("\n                                    R$ " + _vm._s(summaryItem.total) + "\n                                ")]), _vm._v(" "), _c("span", {
       staticClass: "summary-small-text pull-right"
     }, [_vm._v("\n                                    Qtde:   " + _vm._s(summaryItem.quantity) + " x  \n                                    R$:   " + _vm._s(summaryItem.price) + "\n                                ")])])]) : _vm._e()]);
   }), _vm._v(" "), _c("div", {

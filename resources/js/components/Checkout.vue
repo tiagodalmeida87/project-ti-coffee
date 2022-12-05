@@ -134,17 +134,14 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <select class="form-control" name="" v-model="expirationYear">
                                             <option value="">Ano</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                             <option value="2021">2021</option>
                                             <option value="2022">2022</option>
                                             <option value="2023">2023</option>
                                             <option value="2024">2024</option>
                                             <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
                                     </select>
                                     </div>
                                 </div>
@@ -187,7 +184,7 @@
                                 </h5></div>
                                 <div class="summary-price">
                                     <p class="summary-text">
-                                        $ {{summaryItem.total}}
+                                        R$ {{summaryItem.total}}
                                     </p>
                                     <span class="summary-small-text pull-right">
                                         Qtde:   {{summaryItem.quantity}} x  

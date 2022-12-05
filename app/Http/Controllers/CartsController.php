@@ -145,7 +145,7 @@ class CartsController extends Controller
                             $finalData[$cartItem->product_id]['price'] = $cartItem->price;
                             $finalData[$cartItem->product_id]['total'] = $cartItem->price * $cartItem->quantity;
                             $amount += $cartItem->price * $cartItem->quantity;
-                            $finalData['totalAmount'] = $amount;
+                            $finalData['totalAmount'] = number_format($amount, 2, ',', '.') ;
                         }
                     }
                 }
@@ -232,8 +232,10 @@ class CartsController extends Controller
         // Code for charging the client in Stripe.
         $charge = $stripe->charges()->create([
             'customer' => $customer['id'],
-            'currency' => 'USD',
-            'amount' => $amount,
+            'currency' => 'BRL',
+            // 'currency' => 'USD',
+            // 'amount' => $amount,
+            'amount' => number_format($amount, 2, ',', '.'),
             'description' => 'Pagamento do pedido',
         ]);
 
@@ -255,7 +257,7 @@ class CartsController extends Controller
                                         'country' => $country,
                                     ]),
                 'order_details' => json_encode($ordersArray),
-                'amount' => $amount,
+                'amount' => number_format($amount, 2, ',', '.'),
                 'currency' => $charge['currency'],
             ]);
 
@@ -273,8 +275,4 @@ class CartsController extends Controller
             return ['error'=> 'Falha no pedido entre em contato com o suporte'];
         }
     }
-
-
-
-
 }

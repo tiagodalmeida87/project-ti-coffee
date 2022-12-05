@@ -17,7 +17,7 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-            $table->float('price');
+            $table->decimal('price', 10, 2)->default('0.00');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('product_id')->references('id')->on('products');
