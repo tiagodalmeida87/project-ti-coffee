@@ -13,31 +13,31 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <!--====== Favicon Icon ======-->
     {{-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> --}}
 
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    
+
     <!--====== Animate css ======-->
-    {{-- <link rel="stylesheet" href="assets/css/animate.css"> --}}
-    
+    <link rel="stylesheet" href="assets/css/animate.css">
+
     <!--====== Magnific Popup css ======-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    
+
     <!--====== Slick css ======-->
     <link rel="stylesheet" href="assets/css/slick.css">
-    
+
     <!--====== Line Icons css ======-->
     <link rel="stylesheet" href="assets/css/LineIcons.css">
-    
+
     <!--====== Default css ======-->
     <link rel="stylesheet" href="assets/css/default.css">
-    
+
     <!--====== Style css ======-->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
@@ -63,29 +63,29 @@
                     <span class="ml-3 text-xl">TI Coffee</span>
                 </a>
                 <div class="flex items-center">
-                    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    {{-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                         <a href="/" class="mr-5 hover:text-gray-900">Home</a>
-                    </nav>
+                    </nav> --}}
                     {{-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                         <a href="/"class="mr-5 hover:text-gray-900">Pedidos</a> --}}
-                        {{-- <a href="{{ route('admin.products') }}"class="mr-5 hover:text-gray-900">Pedidos</a> --}}
+                    {{-- <a href="{{ route('admin.products') }}"class="mr-5 hover:text-gray-900">Pedidos</a> --}}
                     {{-- </nav> --}}
                     {{-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                         <a href="/"class="mr-5 hover:text-gray-900">Clientes</a> --}}
-                        {{-- <a href="{{ route('client.clients') }}"class="mr-5 hover:text-gray-900">Clientes</a> --}}
+                    {{-- <a href="{{ route('client.clients') }}"class="mr-5 hover:text-gray-900">Clientes</a> --}}
                     {{-- </nav> --}}
-                    <a href="/" {{-- <a href="{{ route('admin.products') }}" --}}
-                        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0">Admin
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+
                     @if (Route::has('login'))
                         <div class="flex items-center">
                             @auth
+                                <a href="/" {{-- <a href="{{ route('admin.products') }}" --}}
+                                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0">Admin
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
                             <cart />
-                               
                             @else
                                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                                     <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">Log in</a>

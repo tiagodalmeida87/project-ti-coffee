@@ -151,11 +151,8 @@ class CartsController extends Controller
                 }
             }
         }
-
         return response()->json($finalData);
     }
-
-
 
     public function processPayment(Request $request)
     {
@@ -191,9 +188,7 @@ class CartsController extends Controller
         }
        
         // Process payment.
-
         $stripe = Stripe::make(env('STRIPE_KEY'));
-
 
         $token = $stripe->tokens()->create([
             'card' => [
@@ -205,12 +200,11 @@ class CartsController extends Controller
         );
     
         if(!$token['id']){
-            session()->flush('error', 'Stripe Token generation failed');
+            session()->flush('error', 'Falha na geração do Stripe Token');
             return;
         }
 
         // Create a customer stripe.
-
         $customer = $stripe->customers()->create([
             'name' => $firstName.' '.$lastName,
             'email' => $email,
@@ -235,20 +229,17 @@ class CartsController extends Controller
             'source' => $token['id'],
         ]);
 
-
         // Code for charging the client in Stripe.
-
         $charge = $stripe->charges()->create([
             'customer' => $customer['id'],
             'currency' => 'USD',
             'amount' => $amount,
-            'description' => 'Payment for order',
+            'description' => 'Pagamento do pedido',
         ]);
 
         if($charge['status'] == "succeeded")
         {
             // Capture the details from stripe.
-
             $customerIdStripe = $charge['id'];
             $amountRec = $charge['amount'];
             $client_id = auth()->user()->id;
@@ -272,16 +263,14 @@ class CartsController extends Controller
             if($processingDetails)
             {
                 // Clear the cart after payment success.
-
                 Cart:: where('user_id', $client_id)->delete();
-
-                return ['success'=> 'Order completed successfully'];
+                return ['success'=> 'Pedido concluído com sucesso'];
             }
             
         }
         else
         {
-            return ['error'=> 'Order failed contact support'];
+            return ['error'=> 'Falha no pedido entre em contato com o suporte'];
         }
     }
 

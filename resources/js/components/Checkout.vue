@@ -158,14 +158,14 @@
                                             <li class="mastercard hand">MasterCard</li>
                                             <li class="amex hand">Amex</li>
                                         </ul>
-                                        <div class="clearfix"></div>
+                                        <div class="clearfix"> </div>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">                                        
                                         <button type="submit" 
-                                        class="btn btn-primary btn-submit-fix"
+                                        class="btn btn-primary btn-submit-fix title-font font-medium text-1xl text-gray-700"
                                          v-on:click.prevent="getUserAddress()">Faça seu pedido</button>
                                     </div>
                                 </div>
@@ -278,7 +278,7 @@
                }
                else
                {
-                   this.$toastr.e('User info incomplete');
+                   this.$toastr.e('Informações do usuário incompletas');
                }
            }
        },

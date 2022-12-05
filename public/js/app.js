@@ -5521,7 +5521,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context2.next = 10;
                 break;
               case 9:
-                _this2.$toastr.e('User info incomplete');
+                _this2.$toastr.e('Informações do usuário incompletas');
               case 10:
               case "end":
                 return _context2.stop();
@@ -6170,7 +6170,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-md-6 col-sm-6 col-xs-12"
   }, [_c("button", {
-    staticClass: "btn btn-primary btn-submit-fix",
+    staticClass: "btn btn-primary btn-submit-fix title-font font-medium text-1xl text-gray-700",
     attrs: {
       type: "submit"
     },
