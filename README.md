@@ -11,7 +11,7 @@ Nesse projeto utilizamos o PHP/Laravel no back end e Vue.js no front end, implem
 > Status do Projeto: Concluido :heavy_check_mark:
 
 ###### home – TICoffee
-![home_page](https:)
+![home_page](https://github.com/tiagodalmeida87/project-ti-coffee/blob/main/public/assets/images/home/home-ticoffee.jpg)
 
 ---
 ### TECNOLOGIAS 🖥️
